@@ -12,12 +12,10 @@ class SendRawMessage
     /**
      * construct
      *
-     * @param array<string, mixed> $attributes
+     * @param array<string, mixed> $attributes {rcpt_to, mail_from, data}
      */
     public function __construct(private array $attributes = [])
-    {
-        $this->attributes['rcpt_to'] = [];
-    }
+    {}
 
     /**
      * set attribute

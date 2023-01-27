@@ -12,16 +12,10 @@ class SendMessage
     /**
      * construct
      *
-     * @param array<string, mixed> $attributes
+     * @param array<string, mixed> $attributes {to, cc, bcc, headers, attachments, from, sender, subject, tag, reply_to, plain_body, html_body}
      */
     public function __construct(private array $attributes = [])
-    {
-        $this->attributes['to'] = [];
-        $this->attributes['cc'] = [];
-        $this->attributes['bcc'] = [];
-        $this->attributes['headers'] = null;
-        $this->attributes['attachments'] = [];
-    }
+    {}
 
     /**
      * set attribute
