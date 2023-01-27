@@ -9,9 +9,23 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $host = 'xxxx';
 $secretKey = 'xxxx';
+$params = [
+    'subject' => 'Test email',
+    'to' => ['xxxx@abc.com'],
+    'from' => 'Tester <no-reply@abc.com>',
+    'html_body' => '<h3>Hello</h3><p>Test Message</p>'
+];
 
 // Create a new Postal client using the server key you generate in the web interface
 $client = new Client($host, $secretKey);
+
+$message = new SendMessage($params);
+// Loop through each of the recipients to get the message ID
+foreach ($result->recipients() as $email => $message) {
+    $email;            // The e-mail address of the recipient
+    $message->id();    // Returns the message ID
+    $message->token(); // Returns the message's token
+}
 
 // Create a new message
 $message = new SendMessage;
